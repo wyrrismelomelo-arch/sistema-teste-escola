@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Escolar PRO MAX</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎓 Sistema Escolar</h1>
+
+<!-- LOGIN -->
+<div id="login">
+<h2>Login</h2>
+
+<input type="text" id="loginUsuario" placeholder="Usuário">
+<input type="password" id="loginSenha" placeholder="Senha">
+
+<button onclick="login()">Entrar</button>
+
+<p onclick="mostrarCadastro()" class="link">Criar conta</p>
+</div>
+
+<!-- CADASTRO -->
+<div id="cadastro" class="hidden">
+<h2>Cadastro</h2>
+
+<input type="text" id="cadUsuario" placeholder="Usuário">
+<input type="password" id="cadSenha" placeholder="Senha">
+
+<select id="tipo">
+<option value="aluno">Aluno</option>
+<option value="professor">Professor</option>
+</select>
+
+<button onclick="cadastrar()">Cadastrar</button>
+
+<p onclick="voltarLogin()" class="link">Voltar</p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+<div class="topo">
+<span id="boasVindas"></span>
+<button onclick="logout()">Sair</button>
+</div>
+
+<!-- PROFESSOR -->
+<div id="painelProfessor" class="hidden">
+<h2>Painel Professor</h2>
+
+<input type="text" id="novaTarefa" placeholder="Nova tarefa">
+<button onclick="criarTarefa()">Adicionar</button>
+
+<ul id="listaProfessor"></ul>
+</div>
+
+<!-- ALUNO -->
+<div id="painelAluno" class="hidden">
+<h2>Painel Aluno</h2>
+
+<ul id="listaAluno"></ul>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
