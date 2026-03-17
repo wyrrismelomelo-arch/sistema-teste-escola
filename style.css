@@ -1,56 +1,89 @@
-body{
-margin:0;
-font-family: Arial;
-background:#f1f3f5;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.app{
-display:flex;
-height:100vh;
+/* FUNDO BONITO */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #4c6ef5, #15aabf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* MENU */
-.sidebar{
-width:200px;
-background:#4c6ef5;
-color:white;
-padding:20px;
+/* CARD CENTRAL */
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease;
 }
 
-.sidebar button{
-width:100%;
-margin:5px 0;
-padding:10px;
-border:none;
-background:#364fc7;
-color:white;
-cursor:pointer;
+/* TÍTULO */
+.container h2 {
+  margin-bottom: 20px;
 }
 
-/* CONTEÚDO */
-.conteudo{
-flex:1;
-padding:20px;
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
 }
 
-.hidden{
-display:none;
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #4c6ef5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-ul{
-list-style:none;
-padding:0;
+button:hover {
+  background: #3b5bdb;
 }
 
-li{
-background:white;
-margin:5px 0;
-padding:10px;
-border-radius:6px;
-display:flex;
-justify-content:space-between;
+/* LINK */
+a {
+  display: block;
+  margin-top: 10px;
+  color: #4c6ef5;
+  cursor: pointer;
 }
 
-button{
-cursor:pointer;
+/* ESCONDER TELAS */
+.hidden {
+  display: none;
 }
+
+/* DASHBOARD */
+#dashboard {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* LISTAS */
+ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+li {
+  background: #f1f3f5;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8
