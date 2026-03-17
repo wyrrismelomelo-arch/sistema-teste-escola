@@ -1,56 +1,74 @@
-body{
-margin:0;
-font-family: Arial;
-background:#f1f3f5;
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
+
+function ir(tela){
+
+document.querySelectorAll(".tela").forEach(t=>{
+t.classList.add("hidden")
+})
+
+document.getElementById(tela).classList.remove("hidden")
+
+if(tela === "tarefas"){
+mostrar()
 }
 
-.app{
-display:flex;
-height:100vh;
 }
 
-/* MENU */
-.sidebar{
-width:200px;
-background:#4c6ef5;
-color:white;
-padding:20px;
+function criarTarefa(){
+
+let texto = document.getElementById("novaTarefa").value
+
+if(!texto) return
+
+tarefas.push(texto)
+
+salvar()
+
+document.getElementById("novaTarefa").value=""
+
+mostrar()
 }
 
-.sidebar button{
-width:100%;
-margin:5px 0;
-padding:10px;
-border:none;
-background:#364fc7;
-color:white;
-cursor:pointer;
+function mostrar(){
+
+let lista = document.getElementById("lista")
+lista.innerHTML=""
+
+tarefas.forEach((t,index)=>{
+
+let li = document.createElement("li")
+
+li.innerHTML = `
+${t}
+<button onclick="remover(${index})">X</button>
+`
+
+lista.appendChild(li)
+
+})
+
 }
 
-/* CONTEÚDO */
-.conteudo{
-flex:1;
-padding:20px;
+function remover(i){
+
+tarefas.splice(i,1)
+
+salvar()
+mostrar()
+
 }
 
-.hidden{
-display:none;
+function salvar(){
+
+localStorage.setItem("tarefas", JSON.stringify(tarefas))
+
 }
 
-ul{
-list-style:none;
-padding:0;
+function logout(){
+
+location.reload()
+
 }
 
-li{
-background:white;
-margin:5px 0;
-padding:10px;
-border-radius:6px;
-display:flex;
-justify-content:space-between;
-}
-
-button{
-cursor:pointer;
-}
+/* inicial */
+document.getElementById("boasVindas").innerText = "Sistema pronto 🚀"
